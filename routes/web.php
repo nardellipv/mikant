@@ -21,3 +21,7 @@ Route::get('/', 'Front\BlogController@home')->name('home');
 Route::post('newsletter', 'Front\NewsLetterController@add')->name('newsLetter');
 
 Route::post('sendemail', 'Front\SendEmailController@send')->name('sendemail');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
