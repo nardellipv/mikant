@@ -20,16 +20,17 @@
         </div>
         <div class="contact-section-bottom">
             <div class="contact-form">
-                <form>
+                {!! Form::open(['method' => 'POST','route' => ['sendemail'],'style'=>'display:inline']) !!}
+                {{ csrf_field() }}
                     <div class="col-md-6 contact-left">
-                        <input type="text" name="name" class="text" value="Nombre*">
-                        <input type="text" name="email" class="text" value="E-mail*">
+                        <input type="text" name="name" class="text" placeholder="Nombre">
+                        <input type="text" name="email" class="text" placeholder="E-mail">
                     </div>
                     <div class="col-md-6 contact-right">
-                        <textarea name="message">Mensaje</textarea>
+                        <textarea name="message" placeholder="Mensaje"></textarea>
                     </div>
                     <input type="submit" value="enviar " />
-                </form>
+                {!! Form::Close() !!}
                 <div>
                 </div>
             </div>

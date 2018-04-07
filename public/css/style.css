@@ -315,7 +315,7 @@ i.global {
     margin-bottom: 1em;
 }
 
-.subscribe input[type="text"] {
+.subscribe input[type="email"] {
     width: 43%;
     color: #fff;
     font-size: 15px;

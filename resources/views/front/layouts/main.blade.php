@@ -29,6 +29,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="{{ asset('images/arr.png') }}"></button>
 
+@include('front.layouts.parts.message_success')
+
 <!-- header-section-starts -->
 @include('front.layouts.parts.header')
 <!-- header-section-ends -->
