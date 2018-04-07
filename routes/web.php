@@ -17,3 +17,6 @@
 
 //front
 Route::get('/', 'Front\BlogController@home')->name('home');
+
+
+//back
