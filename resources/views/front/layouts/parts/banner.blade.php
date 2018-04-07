@@ -1,10 +1,10 @@
 <div class="banner">
     <div class="container">
         <div class="banner-info">
-            <h2>Telecom and IT support provider for small business</h2>
-            <p>Our services are fully managed and we</p>
-            <p>view ourselves as IT department of our company</p>
-            <a href="contact.html" class="btn btn-1 btn-1d">Request a quote</a>
+            <h1>Desarrollo web a medida</h1>
+            <h2>Mostra tu empresa al mundo, con diseños exclusivos y adaptado a los que necesitas.</h2>
+            <p>Creamos aplicaciones web diseñadas unicamente a medida, totalmente diseñada por nostros y
+            para nuestros clientes.</p>
         </div>
     </div>
 </div>

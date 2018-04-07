@@ -1,10 +1,10 @@
-<div class="header">
+<div class="header main-header">
     <div class="container">
         <div class="logo">
             <img src="{{ asset('images/logo.png') }}" class="img-responsive" alt="logo" />
         </div>
         <div class="header-right">
-            <h4><i class="phone"></i>(256) 152 3658</h4>
+            <h4><i class="phone"></i>(54) 261-5965966</h4>
             <span class="menu"></span>
             <div class="top-menu">
                 <ul>

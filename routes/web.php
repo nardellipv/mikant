@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/front/home');
-});
+//Route::get('/', function () {
+//    return view('/home');
+//});
+
+//front
+Route::get('/', 'Front\BlogController@home')->name('home');

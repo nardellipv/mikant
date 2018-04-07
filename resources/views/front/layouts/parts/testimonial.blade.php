@@ -1,32 +1,40 @@
 <div class="testimonials-section">
     <div class="container">
         <div class="testimonials-section-head text-center">
-            <h3>Testimonials</h3>
+            <h3>Lo que la gente dice de MikAnt</h3>
         </div>
         <div class="members">
-            <div class="col-md-4 member1">
-                <img src="images/mem.jpg" alt="" />
-                <div class="text text-center">
-                    <h4>John Doe</h4>
-                    <p>CEO, Company.com</p>
-                </div>
-            </div>
-            <div class="col-md-8 description">
+            <div class="col-md-12 col-xs-offset-1 description">
                 <div class="course_demo">
                     <ul id="flexiselDemo4">
                         <li>
                             <div class="client-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru.</p>
+                                <p>“Tenemos casi un año trabajando con mikant.com para el alojamiento y los registros de nuestros clientes… La consideramos el eslabón principal para estos servicios. PRECIOS Y CALIDAD Incomparables”</p>
+                                <p><i><span>Gustavo M.</span></i></p>
                             </div>
                         </li>
                         <li>
                             <div class="client-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                <p>“Llegamos a mikant a través de un amigo y la verdad es que nuestro negocio creció en ventas y tuvo una visibilidad mucho mayor a la que tenía gracias a el sitio web que construyeron.”</p>
+                                <p><i><span>Laura F.</span></i></p>
                             </div>
                         </li>
                         <li>
                             <div class="client-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. </p>
+                                <p>“Necesitábamos una nueva web ya que la anterior ya era vieja y estaba desactualizada, nos ayudaron mucho y a demás nuestra web aparece en los primeros puestos en las búsquedas de google.”</p>
+                                <p><i><span>German R.</span></i></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="client-text">
+                                <p>“Necesitábamos un desarrollo rápido y sencillo para la inscripción de chicos de todo el mundo para nuestras olimpiadas, mikant logró lo que necesitábamos y nos apoyo en todo lo que pedíamos. Un gran beso a Pablo que es quien lo hizo posible.”</p>
+                                <p><i><span>Lilia D.</span></i></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="client-text">
+                                <p>“Queremos agradecer a mikant por el apoyo que nos han brindado durante estos meses y también felicitarlos por la inauguración de su nueva web! Saludos!”</p>
+                                <p><i><span>Lic. Gina V. y Mariano G.</span></i></p>
                             </div>
                         </li>
                     </ul>
@@ -59,7 +67,7 @@
 
                     });
                 </script>
-                <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+                <script type="text/javascript" src="{{ asset('js/jquery.flexisel.js') }}"></script>
 
             </div>
             <div class="clearfix"></div>
