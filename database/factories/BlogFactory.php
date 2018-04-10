@@ -7,6 +7,7 @@ $factory->define(\App\ModelFront\Blog::class, function (Faker $faker) {
         'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'body' => $faker->paragraph($nbSentences = 10, $variableNbSentences = true),
         'photo' => $faker->imageUrl($width = 640, $height = 480),
+        'status' => $faker->randomElement($array = array('ACTIVE', 'DESACTIVE')),
         'user_id' => rand(1, 10),
     ];
 });
