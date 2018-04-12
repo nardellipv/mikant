@@ -3,7 +3,7 @@
         <div class="last_news">
             <header>
                 <h3>Últimas notas del blog</h3>
-                <a href="https://blog.mikant.com" class="btn btn-info" target="_blank">ir al blog</a>
+                <a href="{{ url('post') }}" class="btn btn-info" target="_blank">ir al blog</a>
             </header>
         </div>
         @foreach($publications as $publication)

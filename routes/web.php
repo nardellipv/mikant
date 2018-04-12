@@ -3,9 +3,14 @@
 //front
 Route::get('/', 'Front\BlogController@home')->name('home');
 
+Route::get('post', 'Front\BlogController@index')->name('post');
+Route::get('single/{id}', 'Front\BlogController@single')->name('single');
+
+
 Route::post('newsletter', 'Front\NewsLetterController@add')->name('newsLetter');
 
 Route::post('sendemail', 'Front\SendEmailController@send')->name('sendemail');
+
 
 //back
 Auth::routes();
