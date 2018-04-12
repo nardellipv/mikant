@@ -11,6 +11,7 @@ class BlogController extends Controller
     public function home()
     {
         $publications = Blog::take(3)
+            ->orderBy ('created_at', 'DESC')
             ->get();
 
         return view('front.home', compact('publications'));

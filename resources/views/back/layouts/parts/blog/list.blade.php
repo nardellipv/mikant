@@ -49,6 +49,9 @@
                                     {{ Form::token() }}
                                     <li><button type="submit" class="btn btn-link"> Eliminar</button></li>
                                     {!! Form::Close() !!}
+
+                                    <li><a href="{{ route('blog.edit', $blog->id) }}" > Editar</a></li>
+
                                     @if($blog->status == 'DESACTIVE')
                                         <li><a href="{{ url('blog/active', $blog->id) }}" > Activar</a></li>
                                     @else

@@ -39,13 +39,38 @@ class BlogController extends Controller
             $blog->photo = $path;
 
         }
-$blog->save();
-        //$blog->fill($request->all())->save();
+        $blog->save();
 
         $blogs = Blog::get();
 
         Session::flash('message', 'Entrada ' . $blog->title . ' creada correctamente.');
         return view('back.layouts.parts.blog.list', compact('blogs'));
+    }
+
+    public function edit(Request $request, $id)
+    {
+        $blog = Blog::find($id);
+
+
+        return view('back.layouts.parts.blog.edit', compact('blog'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $blog = Blog::find($id);
+        $blog->title = $request['title'];
+        $blog->body = $request['body'];
+        $blog->user_id = auth()->user()->id;
+
+        if ($request->photo) {
+
+            $path = Storage::disk('public')->put('/fotos/blog', $request->photo);
+            $blog->photo = $path;
+
+        }
+        $blog->save();
+
+        return back();
     }
 
     public function active($id)

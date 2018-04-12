@@ -9,9 +9,9 @@
         @foreach($publications as $publication)
             <div class="col-md-4 grid_7">
                 <div class="element">
-                    <img src="images/index-1_img-3.jpg" alt="">
+                    <img src="{{ asset($publication->photo) }}" alt="">
                     <h4>{{ $publication->title }}</h4>
-                    <p>{{ $publication->body }}</p>
+                    <p>{!!  $publication->body !!}</p>
                 </div>
             </div>
         @endforeach

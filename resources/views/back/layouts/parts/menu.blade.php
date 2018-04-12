@@ -42,9 +42,9 @@
                     <li><a href="{{ url('dashboard') }}"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
                     <li>
                         <a href="#"><i class="icon-file-text2"></i> <span>Blog</span></a>
-                        <ul>
-                            <li><a href="{{ url('blog/create') }}">Nueva entrada</a></li>
-                            <li><a href="{{ url('blog/show') }}">Listado</a></li>
+                    <ul>
+                        <li><a href="{{ url('blog/show') }}">Listado</a></li>
+                        <li><a href="{{ url('blog/create') }}">Nueva entrada</a></li>
                         </ul>
                     </li>
                 </ul>

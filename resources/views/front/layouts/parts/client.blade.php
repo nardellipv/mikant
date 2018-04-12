@@ -1,4 +1,4 @@
-<div class="our-clients">
+<div class="our-clients" id="clients">
     <div class="container">
         <div class="our-clients-head text-center">
             <h3>Algunos de nuestros clientes.</h3>
