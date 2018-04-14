@@ -30,7 +30,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     @include('front.external.drift')
 
-    @include('front.external.onesignal')
+    @include('front.external.oneSignal')
+
 
 </head>
 <body>
@@ -55,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 {{-- our services--}}
 
 {{-- last news--}}
-@include('front.layouts.parts.last_news')
+{{--@include('front.layouts.parts.last_news')--}}
 {{-- last news--}}
 
 {{-- contact--}}

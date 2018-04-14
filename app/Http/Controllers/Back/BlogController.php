@@ -27,17 +27,14 @@ class BlogController extends Controller
     public function store(Request $request)
     {
 
-
         $blog = new Blog;
         $blog->title = $request['title'];
         $blog->body = $request['body'];
         $blog->user_id = auth()->user()->id;
 
-        if ($request->photo) {
-
-            $path = Storage::disk('public')->put('/fotos/blog', $request->photo);
+        if ($request->hasFile('photo')) {
+            $path= $request->file('photo')->store('public/photo');
             $blog->photo = $path;
-
         }
         $blog->save();
 
@@ -57,6 +54,7 @@ class BlogController extends Controller
 
     public function update(Request $request, $id)
     {
+
         $blog = Blog::find($id);
         $blog->title = $request['title'];
         $blog->body = $request['body'];
@@ -64,7 +62,7 @@ class BlogController extends Controller
 
         if ($request->photo) {
 
-            $path = Storage::disk('public')->put('/fotos/blog', $request->photo);
+            $path = Storage::disk('publico')->put('/fotos/blog', $request->photo);
             $blog->photo = $path;
 
         }

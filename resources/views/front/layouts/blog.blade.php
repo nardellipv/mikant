@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="{{ asset('styleBlog/css/style.css') }}" rel="stylesheet" type="text/css"  media="all" />
-    <title>Problog Website Template | Home :: W3layouts</title>
+    <title>MikAnt | Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href='//fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
     <link rel="icon" href="{{ asset('favicon.ico') }}">

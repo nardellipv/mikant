@@ -9,9 +9,10 @@
         @foreach($publications as $publication)
             <div class="col-md-4 grid_7">
                 <div class="element">
-                    <img src="{{ asset($publication->photo) }}" alt="">
+                    <img src="../storage/app/{{ $publication->photo }}" alt="">
+
                     <h4>{{ $publication->title }}</h4>
-                    <p>{!!  $publication->body !!}</p>
+                    <p>{!! substr($publication->body, 0, 200) !!}</p>
                 </div>
             </div>
         @endforeach
