@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
+
 class BlogController extends Controller
 {
 
@@ -33,6 +34,9 @@ class BlogController extends Controller
         $blog->user_id = auth()->user()->id;
 
         if ($request->hasFile('photo')) {
+            //crear link simbolico en cpanel
+            //ln -s /home/pablon/mikant/storage /home/pablon/public_html/storage
+
             $path= $request->file('photo')->store('public/photo');
             $blog->photo = $path;
         }

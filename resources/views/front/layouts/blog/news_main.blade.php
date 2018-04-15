@@ -1,7 +1,7 @@
 @foreach($publications as $publication)
 <div class="bloger-grid">
     <div class="blog-img">
-        <img src="{{ asset($publication->photo) }}" title="{{ $publication->title }}" />
+        <img src="/storage/app/{{ ($publication->photo) }}" alt="{{$publication->photo}}">
     </div>
     <div class="bloger-content">
         <h5><a href="{{ url('single', $publication->id) }}">{{ $publication->title }}</a></h5>

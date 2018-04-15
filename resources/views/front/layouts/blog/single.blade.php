@@ -43,7 +43,7 @@
 
     <div class="blog-box1">
         <div class="blog-box-image">
-            <img src="{{ asset($post->photo) }}" title="{{ $post->title }}"/>
+            <img src="/storage/app/{{ ($post->photo) }}" alt="{{$post->photo}}">
         </div>
         <div class="blog-box-content">
             <h5>{{ $post->title }}</h5>
