@@ -4,8 +4,7 @@
         <div class="sidebar-user-material">
             <div class="category-content">
                 <div class="sidebar-user-material-content">
-                    <h6>Victoria Baker</h6>
-                    <span class="text-size-small">Santa Ana, CA</span>
+                    <h6>{{ Auth::user()->name }}</h6>
                 </div>
 
                 <div class="sidebar-user-material-menu">
@@ -15,7 +14,7 @@
 
             <div class="navigation-wrapper collapse" id="user-nav">
                 <ul class="navigation">
-                    <li><a href="#"><i class="icon-user-plus"></i> <span>Perfil</span></a></li>
+                    <li><a href="{{ url('profile') }}"><i class="icon-user-plus"></i> <span>Perfil</span></a></li>
                     <li>
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
@@ -42,9 +41,16 @@
                     <li><a href="{{ url('dashboard') }}"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
                     <li>
                         <a href="#"><i class="icon-file-text2"></i> <span>Blog</span></a>
-                    <ul>
-                        <li><a href="{{ url('blog/show') }}">Listado</a></li>
-                        <li><a href="{{ url('blog/create') }}">Nueva entrada</a></li>
+                        <ul>
+                            <li><a href="{{ url('blog/show') }}">Listado</a></li>
+                            <li><a href="{{ url('blog/create') }}">Nueva entrada</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-user"></i> <span>Clientes</span></a>
+                        <ul>
+                            <li><a href="{{ url('clients/list') }}">Listado</a></li>
+                            <li><a href="{{ url('clients/create') }}">Agregar cliente</a></li>
                         </ul>
                     </li>
                 </ul>
