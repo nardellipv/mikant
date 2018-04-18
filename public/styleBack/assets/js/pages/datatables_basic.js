@@ -19,7 +19,7 @@ $(function() {
     $.extend( $.fn.dataTable.defaults, {
         autoWidth: false,
         columnDefs: [{ 
-            orderable: false,
+            orderable: true,
             width: '100px',
             targets: [ 5 ]
         }],

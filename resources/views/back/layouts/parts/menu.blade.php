@@ -47,10 +47,31 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="icon-user"></i> <span>Clientes</span></a>
+                        <a href="#"><i class="icon-person"></i> <span>Clientes</span></a>
                         <ul>
                             <li><a href="{{ url('clients/list') }}">Listado</a></li>
                             <li><a href="{{ url('clients/create') }}">Agregar cliente</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-folder-open3"></i> <span>Proyectos</span></a>
+                        <ul>
+                            <li><a href="{{ url('projects/list') }}">Listado</a></li>
+                            <li><a href="{{ url('projects/create') }}">Agregar proyecto</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-credit-card"></i> <span>Métodos de pago</span></a>
+                        <ul>
+                            <li><a href="{{ url('payment') }}">Listado</a></li>
+                            <li><a href="{{ url('payment/create') }}">Agregar método de pago</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-credit-card"></i> <span>Facturación</span></a>
+                        <ul>
+                            <li><a href="{{ url('payment') }}">Listado</a></li>
+                            <li><a href="{{ url('payment/create') }}">Agregar nueva factura</a></li>
                         </ul>
                     </li>
                 </ul>

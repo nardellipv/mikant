@@ -11,31 +11,23 @@
 
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h5 class="panel-title">Listado de entradas</h5>
+            <h5 class="panel-title">Métodos de Pagos</h5>
 
         </div>
 
-        <table class="table datatable-basic">
+        <table class="table">
             <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Ciudad</th>
-                <th>Dirección</th>
-                <th>Teléfono</th>
+                <th>ID</th>
+                <th>Método</th>
                 <th class="text-center">Actions</th>
             </tr>
             </thead>
             <tbody>
-            @foreach ($clients as $client)
+            @foreach ($payments as $payment)
                 <tr>
-                    <td><a href="{{url('view', $client->id)}}">{{ $client->name }}</a></td>
-                    <td>{{ $client->last_name }}</td>
-                    <td>{{ $client->email }}</td>
-                    <td>{{ $client->city }}</td>
-                    <td>{{ $client->address }}</td>
-                    <td>{{ $client->phone }}</td>
+                    <td>{{ $payment->id }}</td>
+                    <td>{{ $payment->method }}</td>
 
                     <td class="text-center">
                         <ul class="icons-list">
@@ -45,12 +37,12 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    {!! Form::open(['method' => 'DELETE','route' => ['clients.destroy', $client->id],'style'=>'display:inline']) !!}
+                                    {!! Form::open(['method' => 'DELETE','route' => ['payment.destroy', $payment->id],'style'=>'display:inline']) !!}
                                     {{ Form::token() }}
                                     <li><button type="submit" class="btn btn-link"> Eliminar</button></li>
                                     {!! Form::Close() !!}
 
-                                    <li><a href="{{ route('clients.edit', $client->id) }}" > Editar</a></li>
+                                    <li><a href="{{ route('payment.edit', $payment->id) }}" > Editar</a></li>
                                 </ul>
                             </li>
                         </ul>

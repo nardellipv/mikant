@@ -4,17 +4,14 @@ namespace App\ModelBack;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Payment extends Model
 {
 
-    protected $fillable = [
-        'name', 'date_start', 'date_end', 'observation', 'client_id'
-    ];
+    public $timestamps = false;
 
-    public function Client()
-    {
-        return $this->belongsTo(Client::class);
-    }
+    protected $fillable = [
+        'method'
+    ];
 
     public function Invoice()
     {

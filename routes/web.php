@@ -24,3 +24,10 @@ Route::get('/blog/desactive/{id}', 'Back\BlogController@desactive')->name('desac
 Route::resource('profile', 'Back\ProfileController');
 
 Route::resource('clients', 'Back\ClientController');
+Route::get('view/{id}', 'Back\ClientController@view')->name('view');
+
+Route::resource('projects', 'Back\ProjectController');
+
+Route::resource('payment', 'Back\PaymentController');
+
+Route::resource('invoice', 'Back\InvoiceController');

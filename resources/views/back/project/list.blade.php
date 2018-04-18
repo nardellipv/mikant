@@ -19,23 +19,29 @@
             <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Ciudad</th>
-                <th>Dirección</th>
-                <th>Teléfono</th>
+                <th>Cliente</th>
+                <th>Inicio</th>
+                <th>Fin</th>
+                <th>Status</th>
                 <th class="text-center">Actions</th>
             </tr>
             </thead>
             <tbody>
-            @foreach ($clients as $client)
+            @foreach ($projects as $project)
                 <tr>
-                    <td><a href="{{url('view', $client->id)}}">{{ $client->name }}</a></td>
-                    <td>{{ $client->last_name }}</td>
-                    <td>{{ $client->email }}</td>
-                    <td>{{ $client->city }}</td>
-                    <td>{{ $client->address }}</td>
-                    <td>{{ $client->phone }}</td>
+                    <td>{{ $project->name }}</td>
+                    <td><a href="{{url('view', $project->client->id)}}">{{ $project->client->name }}</a></td>
+                    <td>{{ $project->date_start }}</td>
+                    <td>{{ $project->date_end }}</td>
+                    @if($project->status == 'BEGINNING')
+                        <td><span class="label bg-blue">{{ $project->status }}</span></td>
+                    @endif
+                    @if($project->status == 'TERMINATED')
+                        <td><span class="label bg-danger">{{ $project->status }}</span></td>
+                    @endif
+                    @if($project->status == 'IN PROGRESS')
+                        <td><span class="label bg-success">{{ $project->status }}</span></td>
+                    @endif
 
                     <td class="text-center">
                         <ul class="icons-list">
@@ -45,12 +51,14 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    {!! Form::open(['method' => 'DELETE','route' => ['clients.destroy', $client->id],'style'=>'display:inline']) !!}
+                                    {!! Form::open(['method' => 'DELETE','route' => ['clients.destroy', $project->id],'style'=>'display:inline']) !!}
                                     {{ Form::token() }}
-                                    <li><button type="submit" class="btn btn-link"> Eliminar</button></li>
+                                    <li>
+                                        <button type="submit" class="btn btn-link"> Eliminar</button>
+                                    </li>
                                     {!! Form::Close() !!}
 
-                                    <li><a href="{{ route('clients.edit', $client->id) }}" > Editar</a></li>
+                                    <li><a href="{{ route('clients.edit', $project->id) }}"> Editar</a></li>
                                 </ul>
                             </li>
                         </ul>

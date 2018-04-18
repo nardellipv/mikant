@@ -4,11 +4,24 @@ namespace App\Http\Controllers\Back;
 
 use App\ModelBack\Client;
 use App\Http\Controllers\Controller;
+use App\ModelBack\Project;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\Back\ClientResquest;
 
 class ClientController extends Controller
 {
+
+    public function view($id)
+    {
+        $client = Client::find($id);
+
+        $projects = Project::orderBy('date_start', 'DESC')
+        ->where('client_id', $id)
+            ->get();
+
+        return view('back.client.show', compact('client', 'projects'));
+    }
+
     public function show()
     {
         $clients = Client::get();
@@ -27,7 +40,7 @@ class ClientController extends Controller
         $client = new Client;
         $client->fill($request->all())->save();
 
-        Session::flash('message', 'Cliente <b>' .$request->name .'</b> creado exitosamente.');
+        Session::flash('message', 'Cliente <b>' . $request->name . '</b> creado exitosamente.');
         return back();
     }
 
@@ -43,7 +56,7 @@ class ClientController extends Controller
         $client = Client::find($id);
         $client->fill($request->all())->save();
 
-        Session::flash('message', 'Cliente <b>' .$request->name .'</b> modificado exitosamente.');
+        Session::flash('message', 'Cliente <b>' . $request->name . '</b> modificado exitosamente.');
         return back();
     }
 
@@ -52,7 +65,7 @@ class ClientController extends Controller
         $client = Client::find($id);
         $client->delete();
 
-        Session::flash('message', 'Cliente <b>' .$client->name .' '. $client->last_name .'</b> eliminado exitosamente.');
+        Session::flash('message', 'Cliente <b>' . $client->name . ' ' . $client->last_name . '</b> eliminado exitosamente.');
         return back();
     }
 }
