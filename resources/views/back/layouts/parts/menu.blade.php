@@ -68,10 +68,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="icon-credit-card"></i> <span>Facturación</span></a>
+                        <a href="#"><i class="icon-coins"></i> <span>Facturación</span></a>
                         <ul>
-                            <li><a href="{{ url('payment') }}">Listado</a></li>
-                            <li><a href="{{ url('payment/create') }}">Agregar nueva factura</a></li>
+                            <li><a href="{{ url('invoice') }}">Listado</a></li>
+                            <li><a href="{{ url('invoice/create') }}">Agregar nueva factura</a></li>
                         </ul>
                     </li>
                 </ul>

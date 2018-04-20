@@ -19,10 +19,11 @@ class CreateInvoicesTable extends Migration
             $table->date('date_start');
             $table->date('date_end');
             $table->float('price');
+            $table->float('balance');
             $table->integer('quantity');
             $table->integer('tax');
             $table->string('description');
-            $table->enum('status',['DRAFT','PAY','SENT'])->default('DRAFT');
+            $table->enum('status',['CANCEL','PAY','SENT', 'DRAFT'])->default('DRAFT');
             $table->integer('client_id')->unsigned();
             $table->integer('project_id')->unsigned();
             $table->integer('payment_id')->unsigned();

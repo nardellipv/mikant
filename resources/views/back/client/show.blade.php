@@ -62,15 +62,9 @@
                                                         </div>
                                                     </div>
                                                 </li>
-
-
                                             </ul>
                                         </div>
-                                        <!-- /collapsible list -->
-
                                     </div>
-
-
                                 </div>
                             </div>
 
@@ -79,7 +73,6 @@
                                 @foreach($projects as $key=> $project)
                                     <div class="col-md-12">
 
-                                        <!-- Collapsible list -->
                                         <div class="panel panel-flat">
                                             <div class="panel-heading">
                                             </div>
@@ -118,19 +111,76 @@
                                                         </div>
                                                     </div>
                                                 </li>
-
-
                                             </ul>
                                         </div>
-                                        <!-- /collapsible list -->
-
                                     </div>
                                 @endforeach
                             </div>
 
                             <div class="tab-pane" id="colored-tab3">
-                                DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg
-                                whatever.
+                                <table class="table datatable-basic">
+                                    <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Recibo</th>
+                                        <th>Creado</th>
+                                        <th>Cliente</th>
+                                        <th>Monto</th>
+                                        <th>Balance</th>
+                                        <th class="text-center">Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach ($invoices as $invoice)
+                                        <tr>
+                                            <td>
+                                                @if($invoice->status == 'DRAFT')
+                                                    <span class="label label-danger"><i
+                                                                class="icon-eraser"></i> Borrador</span>
+                                                @endif
+                                                @if($invoice->status == 'CANCEL')
+                                                    <span class="label label-danger"><i
+                                                                class="icon-cross2"></i> Cancelado</span>
+                                                @endif
+                                                @if($invoice->status == 'PAY')
+                                                    <span class="label label-success"><i class="icon-checkmark3"></i> Pagado</span>
+                                                @endif
+                                                @if($invoice->status == 'SENT')
+                                                    <span class="label label-info"><i class="icon-spinner2 spinner"></i> Enviado</span>
+                                                @endif
+                                            </td>
+                                            <td>{{ $invoice->id }}</td>
+                                            <td>{{ $invoice->date_start }}</td>
+                                            <td>{{ $invoice->client->name }}</td>
+                                            <td>${{ number_format($invoice->price,0) }}</td>
+                                            <td>${{ number_format($invoice->balance,0) }}</td>
+                                            <td class="text-center">
+                                                <ul class="icons-list">
+                                                    <li class="dropdown">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                            <i class="icon-menu9"></i>
+                                                        </a>
+
+                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                            {!! Form::open(['method' => 'DELETE','route' => ['clients.destroy', $invoice->id],'style'=>'display:inline']) !!}
+                                                            {{ Form::token() }}
+                                                            <li>
+                                                                <button type="submit" class="btn btn-link"> Eliminar
+                                                                </button>
+                                                            </li>
+                                                            {!! Form::Close() !!}
+
+                                                            <li><a href="{{ route('clients.edit', $invoice->id) }}">
+                                                                    Editar</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

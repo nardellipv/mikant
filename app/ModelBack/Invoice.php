@@ -9,7 +9,7 @@ class Invoice extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'date_start', 'date_end', 'price', 'quantity', 'tax', 'description','status','client_id','payment_id','project_id'
+        'date_start', 'date_end', 'price', 'balance', 'quantity', 'tax', 'description','status','client_id','payment_id','project_id'
     ];
 
     public function Payments()

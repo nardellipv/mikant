@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Back;
 
 use App\ModelBack\Client;
 use App\Http\Controllers\Controller;
+use App\ModelBack\Invoice;
 use App\ModelBack\Project;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\Back\ClientResquest;
@@ -16,10 +17,14 @@ class ClientController extends Controller
         $client = Client::find($id);
 
         $projects = Project::orderBy('date_start', 'DESC')
-        ->where('client_id', $id)
+            ->where('client_id', $id)
             ->get();
 
-        return view('back.client.show', compact('client', 'projects'));
+        $invoices = Invoice::orderBy('date_start', 'DESC')
+            ->where('client_id', $id)
+            ->get();
+
+        return view('back.client.show', compact('client', 'projects','invoices'));
     }
 
     public function show()
