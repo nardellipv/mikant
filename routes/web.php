@@ -32,4 +32,5 @@ Route::resource('payment', 'Back\PaymentController');
 
 Route::resource('invoice', 'Back\InvoiceController');
 Route::get('view/{id}', 'Back\InvoiceController@view')->name('view');
-Route::get('pdf/{id}', 'Back\InvoiceController@pdf')->name('pdf');
+
+Route::post('invoicesend', 'Front\SendEmailController@invoiceSend')->name('invoicesend');

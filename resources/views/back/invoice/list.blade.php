@@ -51,11 +51,6 @@
 
                     <div class="panel-footer panel-footer-condensed">
                         <div class="heading-elements">
-												<span class="heading-text">
-													<span class="status-mark border-danger position-left"></span>
-                                                    Finaliza: <span
-                                                            class="text-semibold">{{ $invoice->date_end }}</span>
-												</span>
 
                             <ul class="list-inline list-inline-condensed heading-text pull-right">
                                 <li><a href="#" class="text-default" data-toggle="modal"
@@ -65,10 +60,6 @@
                                     <a href="#" class="text-default dropdown-toggle" data-toggle="dropdown">
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="#"><i class="icon-printer"></i> Print invoice</a></li>
-                                        <li><a href="{{ route('pdf', ['download'=>'pdf']) }}"><i
-                                                        class="icon-file-download"></i> Download PDF</a></li>
-                                        <li class="divider"></li>
                                         <li><a href="{{ route('invoice.show', $invoice->id) }}"><i
                                                         class="icon-file-plus"></i> Editar</a></li>
                                         {!! Form::open(['method' => 'DELETE','route' => ['invoice.destroy', $invoice->id],'style'=>'display:inline']) !!}

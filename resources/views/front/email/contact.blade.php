@@ -4,6 +4,5 @@
 <p style="text-align: left;"><em><strong>Mail enviado de: </strong></em></p>
 <p style="text-align: left;"><strong>Nombre:</strong> {!! $name !!}</p>
 <p style="text-align: left;"><strong>EMail:</strong> {!! $email !!}</p>
-<p style="text-align: left;"><strong>Mensaje: </strong></p>
-<p style="text-align: left;">{!! $email !!}</p>
+<p style="text-align: left;"><strong>Mensaje: </strong> {!! $mensaje !!}</p>
 <p style="text-align: left;">&nbsp;</p>

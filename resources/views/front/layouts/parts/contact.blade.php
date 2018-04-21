@@ -27,7 +27,7 @@
                         <input type="text" name="email" class="text" placeholder="E-mail">
                     </div>
                     <div class="col-md-6 contact-right">
-                        <textarea name="message" placeholder="Mensaje"></textarea>
+                        <textarea name="mensaje" placeholder="Mensaje"></textarea>
                     </div>
                     <input type="submit" value="enviar " />
                 {!! Form::Close() !!}

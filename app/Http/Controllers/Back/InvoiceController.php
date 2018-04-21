@@ -76,22 +76,6 @@ class InvoiceController extends Controller
         return back();
     }
 
-    public function pdf(Request $request, $id)
-    {
-        $invoice = Invoice::find($id);
-
-        $clients = Client::get();
-
-        $projects = Project::get();
-
-        $methods = Payment::get();
-
-        view()->share('invoice', $invoice);
-
-
-            $pdf = PDF::loadView('back.invoice.modalInvoice', compact('invoice'));
-            return $pdf->download('invoice.pdf');
-    }
 
     public function destroy($id)
     {
