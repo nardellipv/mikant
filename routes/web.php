@@ -17,6 +17,7 @@ Auth::routes();
 
 Route::get('/dashboard', 'Back\DashboardController@index')->name('dashboard');
 
+
 Route::resource('blog','Back\BlogController');
 Route::get('/blog/active/{id}', 'Back\BlogController@active')->name('active');
 Route::get('/blog/desactive/{id}', 'Back\BlogController@desactive')->name('desactive');
@@ -31,6 +32,7 @@ Route::resource('projects', 'Back\ProjectController');
 Route::resource('payment', 'Back\PaymentController');
 
 Route::resource('invoice', 'Back\InvoiceController');
-Route::get('view/{id}', 'Back\InvoiceController@view')->name('view');
 
 Route::post('invoicesend', 'Front\SendEmailController@invoiceSend')->name('invoicesend');
+
+//Route::resource('hosting', 'Back\HostingController');

@@ -15,7 +15,7 @@
         </ul>
 
         <div class="navbar-right">
-            <p class="navbar-text">Hola, NOMBRE!</p>
+            <p class="navbar-text">Hola, {{ Auth::user()->name }}</p>
 
         </div>
     </div>

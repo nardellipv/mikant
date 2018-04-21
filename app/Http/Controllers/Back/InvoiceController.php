@@ -77,6 +77,7 @@ class InvoiceController extends Controller
     }
 
 
+
     public function destroy($id)
     {
         $invoice = Invoice::find($id);

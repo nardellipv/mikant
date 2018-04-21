@@ -46,6 +46,13 @@
                             <li><a href="{{ url('blog/create') }}">Nueva entrada</a></li>
                         </ul>
                     </li>
+                   {{-- <li>
+                        <a href="#"><i class="icon-database2"></i> <span>Hosting</span></a>
+                        <ul>
+                            <li><a href="{{ url('blog/show') }}">Listado</a></li>
+                            <li><a href="{{ url('blog/create') }}">Nueva entrada</a></li>
+                        </ul>
+                    </li>--}}
                     <li>
                         <a href="#"><i class="icon-person"></i> <span>Clientes</span></a>
                         <ul>
@@ -61,17 +68,17 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="#"><i class="icon-coins"></i> <span>Recibos</span></a>
+                        <ul>
+                            <li><a href="{{ url('invoice') }}">Listado</a></li>
+                            <li><a href="{{ url('invoice/create') }}">Agregar nueva factura</a></li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="#"><i class="icon-credit-card"></i> <span>Métodos de pago</span></a>
                         <ul>
                             <li><a href="{{ url('payment') }}">Listado</a></li>
                             <li><a href="{{ url('payment/create') }}">Agregar método de pago</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="icon-coins"></i> <span>Facturación</span></a>
-                        <ul>
-                            <li><a href="{{ url('invoice') }}">Listado</a></li>
-                            <li><a href="{{ url('invoice/create') }}">Agregar nueva factura</a></li>
                         </ul>
                     </li>
                 </ul>
