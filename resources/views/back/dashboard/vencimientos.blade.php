@@ -63,8 +63,7 @@
                                 <div class="media-left">
                                     <div class="thumb">
                                         <a href="#">
-                                            <img src="{{ asset('storage/photo/'. $lastPost->photo) }}" class="img-responsive img-rounded media-preview" alt="">
-                                            <span class="zoom-image"><i class="icon-play3"></i></span>
+                                            <img src="/storage/app/{{ ($lastPost->photo) }}" class="img-responsive img-rounded media-preview" alt="">
                                         </a>
                                     </div>
                                 </div>
