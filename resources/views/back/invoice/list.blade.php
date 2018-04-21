@@ -10,10 +10,12 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <h6 class="text-semibold no-margin-top"><a
-                                            href="{{url('view', $invoice->id)}}">{{ $invoice->client->name }}</a></h6>
+                                            href="{{url('view', $invoice->client->id)}}">{{ $invoice->client->name }}</a>
+                                </h6>
                                 <ul class="list list-unstyled">
                                     <li>Recibo #: &nbsp;{{ $invoice->id }}</li>
                                     <li>Creado: <span class="text-semibold">{{ $invoice->date_start }}</span></li>
+                                    <li>Finaliza: <span class="text-semibold">{{ $invoice->date_end }}</span></li>
                                 </ul>
                             </div>
 
@@ -25,7 +27,6 @@
                                 <ul class="list list-unstyled text-right">
                                     {{--<li>Method: <span class="text-semibold">SWIFT</span></li>--}}
                                     <li class="dropdown">
-                                        Estado: &nbsp;
                                         <td>
                                             @if($invoice->status == 'DRAFT')
                                                 <span class="label label-danger"><i
@@ -57,16 +58,19 @@
 												</span>
 
                             <ul class="list-inline list-inline-condensed heading-text pull-right">
-                                <li><a href="#" class="text-default" data-toggle="modal" data-target="#invoice"><i
+                                <li><a href="#" class="text-default" data-toggle="modal"
+                                       data-target="#InvoiceModal-{{$invoice->id}}"><i
                                                 class="icon-eye8"></i></a></li>
                                 <li class="dropdown">
                                     <a href="#" class="text-default dropdown-toggle" data-toggle="dropdown">
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li><a href="#"><i class="icon-printer"></i> Print invoice</a></li>
-                                        <li><a href="#"><i class="icon-file-download"></i> Download invoice</a></li>
+                                        <li><a href="{{ route('pdf', ['download'=>'pdf']) }}"><i
+                                                        class="icon-file-download"></i> Download PDF</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="#"><i class="icon-file-plus"></i> Editar</a></li>
+                                        <li><a href="{{ route('invoice.show', $invoice->id) }}"><i
+                                                        class="icon-file-plus"></i> Editar</a></li>
                                         {!! Form::open(['method' => 'DELETE','route' => ['invoice.destroy', $invoice->id],'style'=>'display:inline']) !!}
                                         {{ Form::token() }}
                                         <li>
@@ -82,10 +86,10 @@
                     </div>
                 </div>
             </div>
+            @include('back.invoice.modalInvoice')
         @endforeach
     </div>
     <div class="col-md-offset-5">
         {{ $invoices->render() }}
-
     </div>
 @endsection

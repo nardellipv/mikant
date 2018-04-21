@@ -31,3 +31,5 @@ Route::resource('projects', 'Back\ProjectController');
 Route::resource('payment', 'Back\PaymentController');
 
 Route::resource('invoice', 'Back\InvoiceController');
+Route::get('view/{id}', 'Back\InvoiceController@view')->name('view');
+Route::get('pdf/{id}', 'Back\InvoiceController@pdf')->name('pdf');

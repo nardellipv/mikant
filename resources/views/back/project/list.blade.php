@@ -58,7 +58,7 @@
                                     </li>
                                     {!! Form::Close() !!}
 
-                                    <li><a href="{{ route('clients.edit', $project->id) }}"> Editar</a></li>
+                                    <li><a href="{{ route('projects.edit', $project->id) }}"> Editar</a></li>
                                 </ul>
                             </li>
                         </ul>

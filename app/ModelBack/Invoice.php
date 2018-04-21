@@ -12,9 +12,9 @@ class Invoice extends Model
         'date_start', 'date_end', 'price', 'balance', 'quantity', 'tax', 'description','status','client_id','payment_id','project_id'
     ];
 
-    public function Payments()
+    public function Payment()
     {
-        return $this->hasMany(Payment::class);
+        return $this->belongsTo(Payment::class);
     }
 
     public function Client()

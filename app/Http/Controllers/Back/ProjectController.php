@@ -18,6 +18,27 @@ class ProjectController extends Controller
         return view('back.project.list', compact('projects'));
     }
 
+    public function edit($id)
+    {
+        $project = Project::find($id);
+
+        $clients = Client::get();
+
+        return view('back.project.edit', compact('project', 'clients'));
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        $project = Project::find($id);
+
+        $project->status = $request['status'];
+        $project->fill($request->all())->save();
+
+        Session::flash('message', 'Proyecto <b>' . $project->name . '</b> modificado correctamente');
+        return back();
+    }
+
     public function create()
     {
         $clients = Client::orderBy('name', 'ASC')

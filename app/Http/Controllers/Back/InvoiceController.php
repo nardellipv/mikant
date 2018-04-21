@@ -6,6 +6,7 @@ use App\ModelBack\Client;
 use App\ModelBack\Invoice;
 use App\ModelBack\Payment;
 use App\ModelBack\Project;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
@@ -18,6 +19,13 @@ class InvoiceController extends Controller
             ->paginate(10);
 
         return view('back.invoice.list', compact('invoices'));
+    }
+
+    public function view($id)
+    {
+        $invoice = Invoice::find($id);
+
+        return view('back.invoice.view', compact('invoice'));
     }
 
     public function create(Request $request)
@@ -34,15 +42,55 @@ class InvoiceController extends Controller
     public function store(Request $request)
     {
 
-/*        $invoice = new Invoice;
+        $invoice = new Invoice;
 
-        $invoice->fill($request->all())->save();*/
+        $invoice->fill($request->all())->save();
 
         $invoicePreview = Invoice::orderBy('id', 'DESC')->first();
 
-//        dd($invoicePreview->price * $invoicePreview->quantity);
 
         return view('back.invoice.preview', compact('invoicePreview'));
+    }
+
+    public function show($id)
+    {
+        $invoice = Invoice::find($id);
+
+        $clients = Client::get();
+
+        $projects = Project::get();
+
+        $methods = Payment::get();
+
+        return view('back.invoice.edit', compact('invoice', 'clients', 'projects', 'methods'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $invoice = Invoice::find($id);
+
+        $invoice->status = $request['status'];
+        $invoice->fill($request->all())->save();
+
+        Session::flash('message', 'Recibo # <b>' . $invoice->id . '</b> modificado exitosamente.');
+        return back();
+    }
+
+    public function pdf(Request $request, $id)
+    {
+        $invoice = Invoice::find($id);
+
+        $clients = Client::get();
+
+        $projects = Project::get();
+
+        $methods = Payment::get();
+
+        view()->share('invoice', $invoice);
+
+
+            $pdf = PDF::loadView('back.invoice.modalInvoice', compact('invoice'));
+            return $pdf->download('invoice.pdf');
     }
 
     public function destroy($id)
