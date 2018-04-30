@@ -33,4 +33,16 @@ class SendEmailController extends Controller
         Session::flash('message', 'Email de Recibo enviado correctamente.');
         return back();
     }
+
+    public function expirationSend(Request $request)
+    {
+        Mail::send('back.mail.expiration', $request->all(), function ($msj) use ($request) {
+            $msj->from('comercial@mikant.com', 'MikAnt');
+            $msj->subject('Aviso vencimiento MikAnt');
+            $msj->to($request->email, $request->name);
+        });
+
+        Session::flash('message', 'Email de vencimiento enviado correctamente.');
+        return back();
+    }
 }

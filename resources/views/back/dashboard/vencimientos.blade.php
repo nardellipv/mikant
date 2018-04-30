@@ -28,8 +28,7 @@
                                 <tr>
                                     <td>{{ $project->name }}</td>
                                     <td>{{ $project->date_end }}</td>
-                                    <td><a href="{{url('view', $project->client->id)}}">{{ $project->client->name }}</a>
-                                    </td>
+                                    <td><a href="{{url('view', $project->client->id)}}">{{ $project->client->name }}</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

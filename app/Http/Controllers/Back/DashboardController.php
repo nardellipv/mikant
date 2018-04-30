@@ -11,8 +11,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $projects = Project::orderBy('date_end', 'DESC')
-            ->take(10)
+        $projects = Project::orderBy('date_end', 'ASC')
+            ->take(5)
             ->paginate(5);
 
         $lastPosts = Blog::orderBy('created_at', 'DESC')

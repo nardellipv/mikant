@@ -15,24 +15,28 @@ Route::post('sendemail', 'Front\SendEmailController@send')->name('sendemail');
 //back
 Auth::routes();
 
-Route::get('/dashboard', 'Back\DashboardController@index')->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/dashboard', 'Back\DashboardController@index')->name('dashboard');
 
 
-Route::resource('blog','Back\BlogController');
-Route::get('/blog/active/{id}', 'Back\BlogController@active')->name('active');
-Route::get('/blog/desactive/{id}', 'Back\BlogController@desactive')->name('desactive');
+    Route::resource('blog', 'Back\BlogController');
+    Route::get('/blog/active/{id}', 'Back\BlogController@active')->name('active');
+    Route::get('/blog/desactive/{id}', 'Back\BlogController@desactive')->name('desactive');
 
-Route::resource('profile', 'Back\ProfileController');
+    Route::resource('profile', 'Back\ProfileController');
 
-Route::resource('clients', 'Back\ClientController');
-Route::get('view/{id}', 'Back\ClientController@view')->name('view');
+    Route::resource('clients', 'Back\ClientController');
+    Route::get('view/{id}', 'Back\ClientController@view')->name('view');
 
-Route::resource('projects', 'Back\ProjectController');
+    Route::resource('projects', 'Back\ProjectController');
 
-Route::resource('payment', 'Back\PaymentController');
+    Route::resource('payment', 'Back\PaymentController');
 
-Route::resource('invoice', 'Back\InvoiceController');
+    Route::resource('invoice', 'Back\InvoiceController');
 
-Route::post('invoicesend', 'Front\SendEmailController@invoiceSend')->name('invoicesend');
+    Route::post('invoicesend', 'Front\SendEmailController@invoiceSend')->name('invoicesend');
+    Route::post('expirationsend', 'Front\SendEmailController@expirationSend')->name('expirationsend');
 
 //Route::resource('hosting', 'Back\HostingController');
+});

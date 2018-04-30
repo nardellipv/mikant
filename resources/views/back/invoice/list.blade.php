@@ -56,6 +56,8 @@
                                 <li><a href="#" class="text-default" data-toggle="modal"
                                        data-target="#InvoiceModal-{{$invoice->id}}"><i
                                                 class="icon-eye8"></i></a></li>
+                                <li><a href="#" class="text-default" data-toggle="modal"
+                                       data-target="#ExpirationModal-{{$invoice->id}}">Vencimiento</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="text-default dropdown-toggle" data-toggle="dropdown">
                                         <span class="caret"></span></a>
@@ -78,6 +80,7 @@
                 </div>
             </div>
             @include('back.invoice.modalInvoice')
+            @include('back.invoice.modalExpiration')
         @endforeach
     </div>
     <div class="col-md-offset-5">
