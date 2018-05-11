@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->date('date_start');
             $table->date('date_end');
             $table->mediumText('observation');
-            $table->enum('status',['IN PROGRESS','TERMINATED','BEGINNING'])->default('BEGINNING');
+            $table->enum('status',['IN PROGRESS','TERMINATED','BEGINNING','TEMPORAL'])->default('BEGINNING');
             $table->integer('client_id')->unsigned();
 
             $table->timestamps();

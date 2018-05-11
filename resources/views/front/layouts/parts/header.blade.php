@@ -12,6 +12,7 @@
                     <li><a href="#about">Sobre Nosotros</a></li>
                     <li><a href="#services">Servicios</a></li>
                     <li><a href="#clients">Algunos Clientes</a></li>
+                    <li><a href="{{ url('hosting') }}">Hosting</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>

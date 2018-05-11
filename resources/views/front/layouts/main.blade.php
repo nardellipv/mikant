@@ -32,10 +32,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     @include('front.external.oneSignal')
 
-
 </head>
 <body>
-<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="{{ asset('images/arr.png') }}"></button>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="{{ asset('images/arr.png') }}" alt="flecha"></button>
 
 @include('front.layouts.parts.message_success')
 

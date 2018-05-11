@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <meta name="keywords" content="Desarrollo de sistemas web a medida, creación de sitios webs, diseño web, diseño web en argentina,
+    desarrollo de sitios web a buen precio, los mejos sistemas webs, aplicaciones web, aplicaciones administrables web." />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

@@ -17,10 +17,16 @@ class CreateHostingsTable extends Migration
             $table->increments('id');
 
             $table->string('name');
-
-            $table->timestamps();
-
-
+            $table->string('plan');
+            $table->string('space_disk');
+            $table->string('transferencia');
+            $table->string('email_account');
+            $table->string('data_base');
+            $table->string('ftp');
+            $table->string('year_pay');
+            $table->integer('cost_before');
+            $table->integer('cost_month');
+            $table->integer('cost_domain');
         });
     }
 

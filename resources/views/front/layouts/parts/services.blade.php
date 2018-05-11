@@ -43,7 +43,7 @@
                         <p>Contamos con alojamiento propio para así poder brindar un servicio completo a nuestros clientes.</p>
                         <div class="icons">
                             <div class="icon-left">
-                                <img src="{{ asset('images/server.png') }}" >
+                                <img src="{{ asset('images/server.png') }}" alt="server">
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -54,7 +54,7 @@
 
                         <div class="icons">
                             <div class="icon-left">
-                                <img src="{{ asset('images/application.png') }}" >
+                                <img src="{{ asset('images/application.png') }}" alt="aplicacion">
                             </div>
                             <div class="clearfix"></div>
                         </div>

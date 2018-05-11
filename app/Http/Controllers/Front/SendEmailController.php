@@ -45,4 +45,5 @@ class SendEmailController extends Controller
         Session::flash('message', 'Email de vencimiento enviado correctamente.');
         return back();
     }
+
 }

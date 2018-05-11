@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\ModelBack\Hosting;
 
 class HostingSeeder extends Seeder
 {
@@ -11,6 +12,6 @@ class HostingSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Hosting::class, 3)->create();
     }
 }

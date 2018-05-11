@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href='//fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
     <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <meta name="keywords" content="Desarrollo de sistemas web a medida, creación de sitios webs, diseño web, diseño web en argentina,
+    desarrollo de sitios web a buen precio, los mejos sistemas webs, aplicaciones web, aplicaciones administrables web." />
 </head>
 <body>
 <!-- Start-wrap -->

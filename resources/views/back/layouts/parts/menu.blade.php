@@ -46,13 +46,13 @@
                             <li><a href="{{ url('blog/create') }}">Nueva entrada</a></li>
                         </ul>
                     </li>
-                   {{-- <li>
+                    <li>
                         <a href="#"><i class="icon-database2"></i> <span>Hosting</span></a>
                         <ul>
-                            <li><a href="{{ url('blog/show') }}">Listado</a></li>
-                            <li><a href="{{ url('blog/create') }}">Nueva entrada</a></li>
+                            <li><a href="{{ url('backhosting/list') }}">Listado</a></li>
+                            <li><a href="{{ url('backhosting/create') }}">Nueva entrada</a></li>
                         </ul>
-                    </li>--}}
+                    </li>
                     <li>
                         <a href="#"><i class="icon-person"></i> <span>Clientes</span></a>
                         <ul>
