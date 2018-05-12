@@ -3,6 +3,7 @@
 <head>
     <title>MikAnt | Desarrollo de software</title>
     <link href="{{ asset('css/bootstrap.css') }}" rel='stylesheet' type='text/css'/>
+    <link rel="canonical" href="http://www.mikant.com" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- Custom Theme files -->

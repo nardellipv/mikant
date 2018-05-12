@@ -19,8 +19,31 @@
     <!-- Add fancyBox main JS and CSS files -->
     <script src="{{ asset('styleHosting/js/jquery.magnific-popup.js') }}" type="text/javascript"></script>
     <link href="{{ asset('styleHosting/css/popup.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '203932853705798');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=203932853705798&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Facebook Pixel Code -->
+
 </head>
 <body>
+
+<script>
+    fbq('track', 'CompleteRegistration');
+</script>
 
 @include('hosting.layouts.parts.headerDomain')
 <div class="about">

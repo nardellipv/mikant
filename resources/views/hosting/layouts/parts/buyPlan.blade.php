@@ -55,24 +55,23 @@
                     <option value="net">net</option>
                 </select>
 
-                <input type="text" class="text" value="nombre" name="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'name';}" required>
-                <input type="text" class="text" value="apellido" name="last_name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'last_name';}" required>
-                <input type="text" class="text" value="provincia" name="city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'city';}" required>
-                <input type="text" class="text" value="dirección" name="address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'address';}" required>
-                <input type="text" class="text" value="teléfono" name="phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'phone';}" required>
-                <input type="text" class="text" value="email" name="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'email';}" required>
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="text" name="last_name" placeholder="Apellido" required>
+                <input type="text" name="city" placeholder="Provincia" required>
+                <input type="text" name="address" placeholder="Direccón" required>
+                <input type="text" name="phone" placeholder="Teléfono" required>
+                <input type="text" name="email" placeholder="Email" required>
                 <select name="pago" required>
-                    <option>Pago</option>
+                    <option value="">Pago</option>
                     <option value="{{ $price->cost_month }}">Mensual ${{ $price->cost_month }}</option>
                     <option value="{{ $price->year_pay }}">Anual ${{ $price->year_pay }}</option>
                 </select>
                 <select name="formaPago" required>
-                    <option>Método pago</option>
+                    <option value="">Método pago</option>
                     @foreach($payments as $payment)
                         <option value="{{ $payment->id }}">{{ $payment->method }}</option>
                     @endforeach
                 </select>
-
             <input type="submit" value="continuar">
             {!! Form::Close() !!}
         </div>

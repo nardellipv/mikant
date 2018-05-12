@@ -34,6 +34,13 @@
             });
         });
     </script>
+
+    @include('front.external.analytics')
+
+    @include('front.external.drift')
+
+    @include('front.external.oneSignal')
+
 </head>
 <body>
 
