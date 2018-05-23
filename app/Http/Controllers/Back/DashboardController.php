@@ -12,6 +12,7 @@ class DashboardController extends Controller
     public function index()
     {
         $projects = Project::orderBy('date_end', 'ASC')
+            ->where('status', '!=', 'TERMINATED')
             ->take(5)
             ->paginate(5);
 

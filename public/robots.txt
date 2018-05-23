@@ -1,2 +1,10 @@
-User-agent: *
-Disallow:
+User-Agent: *
+Disallow: 
+Disallow: /login
+Disallow: /dashboard
+Disallow: /blog
+Disallow: /backhosting
+Disallow: /clients
+Disallow: /projects
+Disallow: /invoice
+Disallow: /payment

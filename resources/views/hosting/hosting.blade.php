@@ -37,10 +37,6 @@
 
     @include('front.external.analytics')
 
-    @include('front.external.drift')
-
-    @include('front.external.oneSignal')
-
 <!-- Hotjar Tracking Code for mikant.com -->
     <script>
         (function(h,o,t,j,a,r){
