@@ -28,7 +28,8 @@
                                 <tr>
                                     <td>{{ $project->name }}</td>
                                     <td>{{ $project->date_end }}</td>
-                                    <td><a href="{{url('view', $project->client->id)}}">{{ $project->client->name }}</a></td>
+                                    <td><a href="{{url('view', $project->client->id)}}">{{ $project->client->name }}</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -62,7 +63,8 @@
                                 <div class="media-left">
                                     <div class="thumb">
                                         <a href="#">
-                                            <img src="/storage/app/{{ ($lastPost->photo) }}" class="img-responsive img-rounded media-preview" alt="">
+                                            <img src="/storage/app/{{ ($lastPost->photo) }}"
+                                                 class="img-responsive img-rounded media-preview" alt="">
                                         </a>
                                     </div>
                                 </div>

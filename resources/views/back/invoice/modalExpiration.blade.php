@@ -10,7 +10,7 @@
             <style type="text/css">
 
                 /* Default CSS */
-               a {
+                a {
                     color: #09c;
                 }
 

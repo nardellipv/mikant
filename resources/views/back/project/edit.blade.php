@@ -69,8 +69,8 @@
                             <label class="col-lg-3 control-label">Estado:</label>
                             <div class="col-lg-9">
                                 <select name="status" class="form-control">
-                                    <option value="{{ $project->status_id }}">{{ $project->status }}</option>
-                                    <option>-----------</option>
+                                    <option value="{{ $project->status }}">{{ $project->status }}</option>
+                                    <option>-------------------------</option>
                                     <option value="BEGINNING">Por Iniciar</option>
                                     <option value="IN PROGRESS">En Progreso</option>
                                     <option value="TERMINATED">Terminado</option>
