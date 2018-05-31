@@ -28,8 +28,8 @@ class ClientResquest extends FormRequest
             'last_name' => 'required',
             'city' => 'required',
             'address' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
+            'phone' => 'required | numeric',
+            'email' => 'required|unique:clients,email',
         ];
     }
 }

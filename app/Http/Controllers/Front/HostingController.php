@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Http\Requests\Back\ClientResquest;
 use App\ModelBack\Client;
 use App\ModelBack\Hosting;
 use App\ModelBack\Invoice;
@@ -49,9 +50,9 @@ class HostingController extends Controller
         return view('hosting.layouts.buy', compact('price','payments'));
     }
 
-    public function step2(Request $request, $id)
+    public function step2(ClientResquest $request, $id)
     {
-
+//        dd($request->all());
 
         //guardo cliente
         $client = new Client;

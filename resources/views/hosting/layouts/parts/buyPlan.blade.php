@@ -41,6 +41,8 @@
             <h4 class="tz-title-4 tzcolor-blue">
                 <p class="tzweight_Bold"><span class="m_1">Formulario<br></span>Registro</p>
             </h4>
+            @include('back.layouts.parts.message_parts.message_errors')
+
             {!! Form::open(['method' => 'POST','route' => ['step2', $price->id],'class'=>'search-form domain-search']) !!}
             {{ csrf_field() }}
                 <input type="radio" name="rad" checked="checked" onclick="mostrar(this.form,0)"/>
@@ -55,11 +57,11 @@
                     <option value="net">net</option>
                 </select>
 
-                <input type="text" name="name" placeholder="Nombre" required>
-                <input type="text" name="last_name" placeholder="Apellido" required>
-                <input type="text" name="city" placeholder="Provincia" required>
-                <input type="text" name="address" placeholder="Direccón" required>
-                <input type="text" name="phone" placeholder="Teléfono" required>
+                <input type="text" name="name" placeholder="Nombre" value="{{ old('name') }}" required>
+                <input type="text" name="last_name" placeholder="Apellido" value="{{ old('last_name') }}" required>
+                <input type="text" name="city" placeholder="Provincia" value="{{ old('city') }}" required>
+                <input type="text" name="address" placeholder="Direccón" value="{{ old('address') }}" required>
+                <input type="text" name="phone" placeholder="Teléfono" value="{{ old('phone') }}" required>
                 <input type="text" name="email" placeholder="Email" required>
                 <select name="pago" required>
                     <option value="">Pago</option>

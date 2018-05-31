@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Http\Requests\Back\ClientResquest;
 use App\ModelBack\Hosting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -39,6 +40,7 @@ class HostingController extends Controller
 
     public function store(Request $request)
     {
+
         $hosting = new Hosting;
         $hosting->fill($request->all())->save();
 
