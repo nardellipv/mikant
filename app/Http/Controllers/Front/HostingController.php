@@ -10,7 +10,6 @@ use App\ModelBack\Payment;
 use App\ModelBack\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
 
 use Iodev\Whois\Whois;
@@ -52,7 +51,6 @@ class HostingController extends Controller
 
     public function step2(ClientResquest $request, $id)
     {
-//        dd($request->all());
 
         //guardo cliente
         $client = new Client;
@@ -104,6 +102,21 @@ class HostingController extends Controller
         $invoice->project_id = $project->id;
         $invoice->payment_id = $request['formaPago'];
         $invoice->save();
+
+
+        //creo el hosting en WHM
+        $cpanel = new \Gufy\CpanelPhp\Cpanel([
+            'host'        =>  'https://sd-1206130-l.dattaweb.com:2087/', // ip or domain complete with its protocol and port
+            'username'    =>  'pablon', // username of your server, it usually root.
+            'auth_type'   =>  'password', // set 'hash' or 'password'
+            'password'    =>  '5215MicaAnto55!', // long hash or your user's password
+        ]);
+
+        //genero usuario para cpanel
+
+        $userName = $client->name .''. substr($client->last_name,0,1);
+
+        $accounts = $cpanel->createAccount($project->name, $userName, 'MOiEnkur7Es=', $request->plan);
 
 
         Mail::send('hosting.layouts.mail.account', $request->all(), function ($msj) use ($request) {

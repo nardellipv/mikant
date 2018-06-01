@@ -1,5 +1,7 @@
 <?php
 
+use Gufy\CpanelPhp;
+
 //front
 Route::get('/', 'Front\BlogController@home')->name('home');
 

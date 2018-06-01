@@ -11,7 +11,18 @@
             frm.tld.style.visibility = 'visible';
         }
     }
+    var statSend = false;
+    function checkSubmit() {
+        if (!statSend) {
+            statSend = true;
+            return true;
+        } else {
+            alert("Estamos procesando los datos, aguarda un segundo por favor...");
+            return false;
+        }
+    }
 </script>
+
 <div class="support_box">
     <div class="container">
         <div class="col-md-6">
@@ -43,7 +54,7 @@
             </h4>
             @include('back.layouts.parts.message_parts.message_errors')
 
-            {!! Form::open(['method' => 'POST','route' => ['step2', $price->id],'class'=>'search-form domain-search']) !!}
+            {!! Form::open(['method' => 'POST','route' => ['step2', $price->id],'class'=>'search-form', 'onsubmit'=>'return checkSubmit();']) !!}
             {{ csrf_field() }}
                 <input type="radio" name="rad" checked="checked" onclick="mostrar(this.form,0)"/>
                 <label for="txt1">¿Tenes registrado un nombre de dominio para tu web?</label>
@@ -58,6 +69,7 @@
                 </select>
 
                 <input type="text" name="name" placeholder="Nombre" value="{{ old('name') }}" required>
+                <input type="text" name="plan" value="{{ $price->plan }}" class="hidden">
                 <input type="text" name="last_name" placeholder="Apellido" value="{{ old('last_name') }}" required>
                 <input type="text" name="city" placeholder="Provincia" value="{{ old('city') }}" required>
                 <input type="text" name="address" placeholder="Direccón" value="{{ old('address') }}" required>

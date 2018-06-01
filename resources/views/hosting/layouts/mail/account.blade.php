@@ -41,8 +41,17 @@
                 </tr>
                 <tr style="height: 106px;">
                     <td class="sectionSubTitle" style="height: 106px;">
-                        <p>Muchas gracias por su compra. En unos minutos le estará llegando un nuevo mail con los datos
-                            de su nueva cuenta de hosting y el cupon de pago.</p>
+                        <h4>Su datos para ingresar a su nueva cuenta de hosting son:</h4>
+                        @if($txt1)
+                            <p>Dominio: <b>{!! $txt1 !!}</b></p>
+                        @else
+                            <p>Dominio: <b>{!! $txt2 !!}.{!! $tld !!}</b></p>
+                        @endif
+                        <p>CPanle: <b>https://mikant.com:2083/</b></p>
+                        <p>Usuario: <b>{!! $name !!}{!! substr($last_name,0,1) !!}</b></p>
+                        <p>Contraseña: <b>MOiEnkur7Es=</b></p>
+                        <p>NameServer1: ns13.hostmar.com</p>
+                        <p>NameServer2: ns14.hostmar.com: </p>
                         <br/>
                         <p>Cualquier duda o inconveniente puede contactarnos a:</p>
                         <table style="height: 172px; width: 296px; margin-left: auto; margin-right: auto;">
