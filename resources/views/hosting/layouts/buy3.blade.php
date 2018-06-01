@@ -19,8 +19,15 @@
     <!-- Add fancyBox main JS and CSS files -->
     <script src="{{ asset('styleHosting/js/jquery.magnific-popup.js') }}" type="text/javascript"></script>
     <link href="{{ asset('styleHosting/css/popup.css') }}" rel="stylesheet" type="text/css">
+
+    @include('front.external.pixelFace')
+
 </head>
 <body>
+{{--pixel comprar facebook--}}
+<script>
+    fbq('track', 'Purchase');
+</script>
 
 @include('hosting.layouts.parts.headerDomain')
 <div class="about">
