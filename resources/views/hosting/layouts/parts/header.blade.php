@@ -15,7 +15,7 @@
                 <li><a href="#precios">Precios</a></li>
                 <li><a href="#ofertas">Ofertas</a></li>
             </ul>
-            <script type="text/javascript" src="{{ asset('js/nav.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('styleHosting/js/nav.js') }}"></script>
         </div><!-- end h_menu4 -->
     </div>
 </div>

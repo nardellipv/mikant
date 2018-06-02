@@ -3,7 +3,7 @@
         {!! Form::open(['method' => 'POST','route' => ['search'],'class'=>'search-form domain-search']) !!}
         {{ csrf_field() }}
         <div class="two-fifth column first">
-            <img src="{{ asset('images/search.png') }}" alt=""/>
+            <img src="{{ asset('styleHosting/images/search.png') }}" alt=""/>
             <h2><span class="m_1">Busca tu</span><br>dominio</h2>
         </div>
         <div class="three-fifth column first">
