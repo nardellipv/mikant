@@ -15,6 +15,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="https://wwww.celiacosmendoza.com" target="_blank">
+                                <img src="{{ asset('images/clientes/celiacos.png') }}" alt="celiacos">
+                            </a>
+                        </li>
+                        <li>
                             <img src="{{ asset('images/clientes/empatica.jpg') }}" alt="empatica">
                         </li>
                         <li>

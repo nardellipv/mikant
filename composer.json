@@ -17,7 +17,8 @@
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.2.0",
         "matriphe/imageupload": "^6.1",
-        "unisharp/laravel-ckeditor": "^4.7"
+        "unisharp/laravel-ckeditor": "^4.7",
+        "greggilbert/recaptcha": "^2.2"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

@@ -43,18 +43,7 @@
 
 @include('front.external.pixelFace')
 
-<!-- Hotjar Tracking Code for mikant.com -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:878852,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-
+@include('front.external.drift')
 </head>
 <body>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="{{ asset('images/arr.png') }}" alt="flecha">
@@ -62,6 +51,7 @@
 
 
 @include('front.layouts.parts.message_success')
+@include('back.layouts.parts.message_parts.message_errors')
 
 <!-- header-section-starts -->
 @include('front.layouts.parts.header')

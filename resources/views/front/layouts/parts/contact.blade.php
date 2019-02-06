@@ -24,14 +24,18 @@
                 {!! Form::open(['method' => 'POST','route' => ['sendemail'],'style'=>'display:inline']) !!}
                 {{ csrf_field() }}
                 <div class="col-md-6 contact-left">
-                    <input type="text" name="name" class="text" placeholder="Nombre">
-                    <input type="text" name="email" class="text" placeholder="E-mail">
+                    <input type="text" name="nameClient" class="text" placeholder="Nombre">
+                    <input type="text" name="emailClient" class="text" placeholder="E-mail">
                 </div>
                 <div class="col-md-6 contact-right">
                     <textarea name="mensaje" placeholder="Mensaje"></textarea>
                 </div>
-
-                <input type="submit" value="enviar "/>
+                <div class="col-md-6" style="margin-left: 35%;">
+                    {!! Recaptcha::render() !!}
+                </div>
+                <div class="col-md-6" style="margin-left: 25%;">
+                    <input type="submit" value="enviar "/>
+                </div>
 
                 {!! Form::Close() !!}
                 <div>

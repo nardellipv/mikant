@@ -5,11 +5,11 @@
             <div class="services-section-grids">
                 <div class="col-md-4 services-section-grid1">
                     <div class="services-section-grid1-top">
-                        <h4>Atención las 24hs</h4>
-                        <p>Atención todos los días, todo el día.</p>
+                        <h4>Desarrollo de software empresarial</h4>
+                        <p>Cree un software a medida y modernice su empresa siempre a un precio acorde al desarrollo.</p>
                         <div class="icons">
                             <div class="icon-left">
-                                <i class="call"></i>
+                                <i class="zoom"></i>
                             </div>
 
                             <div class="clearfix"></div>
@@ -29,7 +29,8 @@
                 <div class="col-md-4 services-section-grid2">
                     <h4>Actualización de Webs</h4>
                     <p>Tener una web vieja y pasada de moda da una mala impresión a los futuros clientes, nosotros podemos actualizarla.</p>
-                    <p>Tener una web desactualizada es la principal razon para que futuros clientes la abonden y se pierdan posibles ventas.</p>
+                    <p>Tener una web desactualizada es la principal razón para que futuros clientes la abandonen y se pierdan posibles ventas.</p>
+                    <p>Luego de la actualización usted mismo podrá modificar su web sin necesidad de contactar a especialistas.</p>
                     <div class="icons icons2">
                         <div class="icon-left">
                             <i class="interact"></i>
@@ -49,9 +50,9 @@
                         </div>
                     </div>
                     <div class="services-section-grid3-bottom">
-                        <h4>Productos Propios</h4>
-                        <p>Contamos con aplicaciones propias desarrolladas y comercializadas por nosotros.</p>
-
+                        <h4>Software a medida de sus necesidades</h4>
+                        <p>Desarrollamos sistemas web bajo un entorno web, lo que facilita el acceso desde cualquier parte con acceso a internet.
+                        Podrá acceder a su sistema desde cualquier dispositivo.</p>
                         <div class="icons">
                             <div class="icon-left">
                                 <img src="{{ asset('images/application.png') }}" alt="aplicacion">

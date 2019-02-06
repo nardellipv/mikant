@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Session;
 
 class NewsLetterController extends Controller
 {
-    public function add(Request $request)
+    public function add(NewsLetterRequest $request)
     {
-
+//dd($request->all());
         $newsletter = new NewsLetter;
         $newsletter->fill($request->all())->save();
 

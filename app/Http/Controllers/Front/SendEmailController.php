@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Http\Requests\Front\ClientSendMailRequest;
 use App\Mail\Contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -10,9 +11,11 @@ use Illuminate\Support\Facades\Session;
 
 class SendEmailController extends Controller
 {
-    public function send(Request $request)
+    public function send(ClientSendMailRequest $request)
     {
-        Mail::send('front.email.contact', $request->all(), function ($msj){
+//        dd($request->all());
+        Mail::send('front.email.contact',$request->all(), function ($msj) use ($request) {
+            $msj->from($request->emailClient, $request->nameClient);
             $msj->subject('Mensaje de contacto');
             $msj->to('comercial@mikant.com');
         });
