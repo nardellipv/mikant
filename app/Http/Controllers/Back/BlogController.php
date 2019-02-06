@@ -31,6 +31,7 @@ class BlogController extends Controller
         $blog = new Blog;
         $blog->title = $request['title'];
         $blog->body = $request['body'];
+        $blog->slug = str_slug($request['title']);
         $blog->user_id = auth()->user()->id;
 
         if ($request->hasFile('photo')) {

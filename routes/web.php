@@ -1,12 +1,10 @@
 <?php
 
-use Gufy\CpanelPhp;
-
 //front
 Route::get('/', 'Front\BlogController@home')->name('home');
 
 Route::get('post', 'Front\BlogController@index')->name('post');
-Route::get('single/{id}', 'Front\BlogController@single')->name('single');
+Route::get('single/{slug}', 'Front\BlogController@single')->name('single');
 
 
 Route::post('newsletter', 'Front\NewsLetterController@add')->name('newsLetter');

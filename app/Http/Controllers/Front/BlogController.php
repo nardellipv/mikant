@@ -17,12 +17,14 @@ class BlogController extends Controller
         return view('front.blog', compact('publications'));
     }
 
-    public function single($id)
+    public function single($slug)
     {
-        $post = Blog::find($id);
+        $post = Blog::where('slug', $slug)
+            ->first();
 
         return view('front.layouts.blog.single', compact('post'));
     }
+
     public function home()
     {
         $publications = Blog::take(3)
